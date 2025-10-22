@@ -1,0 +1,591 @@
+/* Color Palette: Green Dominance & Light Blue Theme */
+:root {
+    --primary-color: #00A343; /* Dominant Green */
+    --accent-color: #00C853;  /* Brighter Green for key CTAs */
+    
+    /* SITE BACKGROUND: Light Blue */
+    --primary-bg: #E0F7FA; 
+    
+    /* DARK BACKGROUND: Used for dark sections like Footer */
+    --secondary-dark-bg: #0A0A1F; 
+    
+    --text-light: #F0F0F0; /* Solid White/Light gray text (for dark elements) */
+    --text-dark: #333333; /* Dark text for light backgrounds */
+    --card-bg: #1A1A2E;     /* Darker shade for elements like cards */
+    --light-bg: #FFFFFF;   /* Used for pure white background on Services/Contact */
+    --text-card-bright: #FFFFFF; /* Explicitly define pure white for dark cards */
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark); /* Default site text is dark */
+    background-color: var(--primary-bg); /* New Light Blue Background */
+}
+
+/* Header/Navigation */
+header {
+    background-color: transparent; 
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute; 
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.main-nav a {
+    color: var(--text-dark); /* Nav text is now dark on light blue background */
+    text-decoration: none;
+    margin-left: 25px; 
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover:not(.cta-button) {
+    color: var(--primary-color);
+}
+
+/* CTA Button Styling (Shared) */
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    border: 1px solid var(--accent-color); 
+    background-color: transparent; 
+    color: var(--text-dark); 
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color); 
+    color: var(--secondary-dark-bg); /* Use dark navy on hover */
+    transform: translateY(-2px);
+}
+
+/* Section Base */
+section {
+    padding: 6rem 5%; 
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color); 
+    font-weight: 700;
+}
+
+/* Section description text */
+.section-description {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    color: var(--text-dark); 
+}
+
+/* ==================================== */
+/* --- HERO SLIDESHOW STYLES (FIXED) --- */
+/* ==================================== */
+
+.hero-slideshow {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Sets the height for the entire hero area */
+    overflow: hidden;
+    margin-bottom: 0; /* Remove space above the next section */
+}
+
+.slides-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mySlides {
+    /* CRITICAL: Positions all slides exactly on top of each other */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Initially hidden. JS will show them one at a time. */
+    display: none; 
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+    /* Ensures the image covers the area completely */
+    object-fit: cover; 
+    /* Darkens the image to make white text easier to read */
+    filter: brightness(50%); 
+}
+
+/* Style for the text overlay (The "Floating Words") */
+.mySlides .hero-content {
+    /* Position the content block in the center of the slide */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    text-align: center;
+    color: white; 
+    z-index: 2; /* Ensures text is on top of the image */
+    max-width: 900px;
+    padding: 20px;
+    /* Add subtle text shadow for better contrast */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.mySlides .hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    color: white; 
+}
+
+.mySlides .hero-content p {
+    font-size: 1.2em;
+    opacity: 0.9;
+    color: white; 
+}
+
+/* Fading animation (CRITICAL for smooth transition) */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Dots/bullets/indicators container and styling */
+.slideshow-dots {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: var(--primary-color);
+}
+
+
+/* ==================================== */
+/* ABOUT SECTION (Light Blue Background) */
+/* ==================================== */
+.about {
+    background-color: var(--primary-bg); 
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.about h2 {
+    color: var(--primary-color);
+}
+
+.about p {
+    color: var(--text-dark) !important; 
+    font-size: 1.1rem; 
+    margin: 0 auto 1.5rem; 
+    max-width: 800px;
+}
+.about .section-description {
+    color: var(--text-dark) !important;
+}
+
+
+/* ==================================== */
+/* SERVICES SECTION (White Background/Dark Cards) */
+/* ==================================== */
+.services {
+    background-color: var(--light-bg); 
+    color: var(--text-dark); 
+}
+
+.services h2 {
+    color: var(--text-dark); 
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.service-card {
+    background-color: var(--card-bg); /* Dark navy background */
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, border-color 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+/* Ensure service card titles (h3) are green */
+.service-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Ensure service card paragraph text is solid white */
+.service-card p {
+    color: var(--text-card-bright) !important; 
+}
+
+/* ==================================== */
+/* PORTFOLIO SECTION */
+/* ==================================== */
+.portfolio {
+    background-color: var(--primary-bg); /* New Light Blue Background */
+}
+
+.portfolio-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 380px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-left: 5px solid var(--primary-color);
+}
+
+/* Ensure project card main titles (h4) are white */
+.project-card h4 {
+    color: var(--text-light);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Project Tags (like "Proprietary Platform") must be green */
+.project-card p.tag {
+    font-size: 0.9rem;
+    color: var(--accent-color) !important; /* Force green color on tags */
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Target the project description text specifically for solid white */
+.project-card p.project-description {
+    color: var(--text-card-bright) !important; 
+}
+
+/* ==================================== */
+/* Contact Page Layout (Two Columns) */
+/* ==================================== */
+.contact-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to one column on mobile */
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+@media (min-width: 992px) {
+    .contact-content-wrapper {
+        grid-template-columns: 1fr 1fr; /* Two columns on desktop */
+    }
+}
+
+.contact-details {
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: var(--card-bg); /* Dark background for buttons */
+    color: var(--text-light) !important; /* White text on dark button */
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 200px; /* Uniform width */
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-dark-bg) !important; /* Dark navy text on green hover */
+}
+
+/* ==================================== */
+/* Final CTA and Form Styles (Light Section, Two Columns) */
+/* ==================================== */
+.final-cta {
+    /* Section Background is WHITE/Light */
+    background-color: var(--light-bg); 
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the main H2 */
+}
+
+.final-cta h2 {
+    /* Main H2 (Have a Project In mind?) is dark */
+    color: var(--text-dark); 
+    margin-bottom: 2rem;
+}
+
+/* New: Styles for titles in the columns */
+.contact-info h3, .contact-form-container h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color); /* Green titles */
+    margin-bottom: 1.5rem;
+}
+
+/* Ensure ALL paragraph text in the section is dark */
+.final-cta p {
+    color: var(--text-dark); 
+    line-height: 1.6;
+}
+
+.contact-form {
+    max-width: none;
+    margin: 0;
+    text-align: left;
+}
+
+/* Form Input Styles: Now using dark text and light/white fields */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: 18px; 
+    border-radius: 6px; 
+    
+    background-color: var(--light-bg) !important; 
+    border: 1px solid var(--text-dark) !important; 
+    
+    /* CRITICAL FIX: Ensures typed text is dark/black */
+    color: var(--text-dark) !important;
+    -webkit-text-fill-color: var(--text-dark) !important; 
+    
+    opacity: 1 !important; 
+    font-size: 1rem;
+    -webkit-box-shadow: none !important;
+}
+
+/* Placeholder Fixes for Light Background/Dark Text */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #666666 !important; /* Dark gray */
+    opacity: 1 !important;
+}
+/* For older Firefox support */
+.contact-form input::-moz-placeholder,
+.contact-form textarea::-moz-placeholder {
+    color: #666666 !important;
+    opacity: 1 !important;
+}
+/* For Internet Explorer/Edge support */
+.contact-form input:-ms-input-placeholder,
+.contact-form textarea:-ms-input-placeholder {
+    color: #666666 !important;
+}
+/* End of Placeholder Fixes */
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .submit-button {
+    width: 100%; 
+    padding: 15px; 
+    font-size: 1.1rem;
+    background-color: var(--primary-color);
+    color: var(--text-light); 
+    border: none;
+}
+
+.contact-form .submit-button:hover {
+    background-color: #00702D;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--secondary-dark-bg); 
+    color: rgba(255, 255, 255, 0.6);
+    padding: 3rem 5%;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-footer {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--text-light); 
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366; 
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        background-color: var(--secondary-dark-bg); 
+        position: relative;
+    }
+    .main-nav {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .main-nav a {
+        margin: 0;
+    }
+    .hero-slideshow {
+        height: 70vh; 
+    }
+    .mySlides .hero-content {
+        padding: 0 5%;
+    }
+    .mySlides .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .mySlides .hero-content p {
+        font-size: 1rem;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-links {
+        margin-top: 20px;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mySlides .hero-content h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .service-card, .project-card {
+        padding: 1.5rem;
+    }
+}
