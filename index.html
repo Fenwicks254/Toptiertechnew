@@ -34,8 +34,13 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .project-card:hover .project-image {
-            transform: scale(1.1) rotate(1deg);
+        .project-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover {
+            border-color: rgba(0, 203, 169, 0.4);
+            transform: translateY(-5px);
         }
     </style>
 </head>
@@ -69,8 +74,8 @@
 
     <section class="relative min-h-screen flex items-center pt-20">
         <div class="absolute inset-0 z-0 overflow-hidden">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072');"></div>
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072');"></div>
             <div class="absolute inset-0 hero-overlay z-10"></div>
         </div>
 
@@ -79,18 +84,18 @@
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] mb-8 break-words">
                     Elite Tech for <br><span class="text-[#00cba9]">Elite Growth.</span>
                 </h1>
-                <p class="text-lg md:text-2xl text-gray-300 mb-12 max-w-xl leading-relaxed">
-                    Custom digital infrastructure designed for the next generation of industry leaders.
+                <p class="text-lg md:text-2xl text-gray-300 mb-12 max-w-xl leading-relaxed italic">
+                    We architect, develop, and deploy high-end digital solutions for modern enterprise.
                 </p>
                 <div class="flex flex-wrap gap-5">
-                    <a href="contact.html" class="bg-[#00cba9] text-white px-10 py-5 rounded-xl font-extrabold text-lg shadow-xl hover:scale-105 transition">Start Building</a>
-                    <a href="services.html" class="bg-white/10 border border-white/20 backdrop-blur-md px-10 py-5 rounded-xl font-bold text-lg hover:bg-white/20 transition">Learn More</a>
+                    <a href="contact.html" class="bg-[#00cba9] text-white px-10 py-5 rounded-xl font-extrabold text-lg shadow-xl hover:scale-105 transition">Work With Us</a>
+                    <a href="services.html" class="bg-white/10 border border-white/20 backdrop-blur-md px-10 py-5 rounded-xl font-bold text-lg hover:bg-white/20 transition">Our Services</a>
                 </div>
             </div>
 
             <div class="hidden lg:block">
                 <div class="glass-panel p-12 rounded-[3rem] border-l-8 border-[#00cba9]">
-                    <p class="text-[#00cba9] font-bold text-sm uppercase tracking-widest mb-4">Internal System</p>
+                    <p class="text-[#00cba9] font-bold text-sm uppercase tracking-widest mb-4">Core Systems</p>
                     <h2 class="text-4xl font-bold mb-4 italic">Fluid-Architecture</h2>
                     <p class="text-gray-400 text-lg mb-8 italic">"Building systems that don't just work, but scale infinitely."</p>
                     <div class="h-1 w-24 bg-[#00cba9] rounded-full"></div>
@@ -99,68 +104,84 @@
         </div>
     </section>
 
-    <section id="portfolio" class="py-32 bg-[#0f172a] px-6">
+    <section id="portfolio" class="py-32 bg-[#0f172a] px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                 <div class="max-w-2xl">
-                    <h2 class="text-[#00cba9] font-bold uppercase tracking-[0.3em] text-sm mb-4">Case Studies</h2>
+                    <h2 class="text-[#00cba9] font-bold uppercase tracking-[0.3em] text-xs mb-4">Case Studies</h2>
                     <h3 class="text-4xl md:text-6xl font-extrabold text-white italic">Proven <span class="text-[#00cba9]">Architecture.</span></h3>
                 </div>
-                <p class="text-gray-400 max-w-sm italic">Explore a selection of high-performance systems architected by our elite engineering team.</p>
+                <p class="text-gray-400 max-w-sm italic">Explore a selection of high-performance systems and digital experiences developed by our team.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 gap-10">
+                
                 <div class="project-card group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
-                    <div class="h-80 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000" alt="Networking" class="project-image w-full h-full object-cover transition duration-700 opacity-60 group-hover:opacity-100">
+                    <div class="h-80 overflow-hidden bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=1200" alt="Networking" class="w-full h-full object-cover transition duration-700 opacity-40 group-hover:opacity-100 group-hover:scale-110">
                     </div>
-                    <div class="p-8">
+                    <div class="p-10 border-t border-white/5">
                         <div class="flex justify-between items-center mb-4">
                             <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest">Networking</span>
-                            <div class="text-white/20 text-xl"><i class="fas fa-server"></i></div>
+                            <i class="fas fa-server text-white/20 text-xl"></i>
                         </div>
-                        <h4 class="text-2xl font-bold mb-2">Global Mesh VPN</h4>
-                        <p class="text-gray-400 text-sm">Secure, zero-latency mesh network infrastructure for enterprise logistics.</p>
+                        <h4 class="text-3xl font-bold mb-3 text-white">Global Mesh VPN</h4>
+                        <p class="text-gray-400">Secure, zero-latency mesh network infrastructure designed for multi-national logistics.</p>
                     </div>
                 </div>
 
                 <div class="project-card group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
-                    <div class="h-80 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000" alt="AI Neural Path" class="project-image w-full h-full object-cover transition duration-700 opacity-60 group-hover:opacity-100">
+                    <div class="h-80 overflow-hidden bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200" alt="Web Design" class="w-full h-full object-cover transition duration-700 opacity-40 group-hover:opacity-100 group-hover:scale-110">
                     </div>
-                    <div class="p-8">
+                    <div class="p-10 border-t border-white/5">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest">Web Development</span>
+                            <a href="https://mituagirls.co.ke" target="_blank" class="text-[#00cba9] hover:text-white transition"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h4 class="text-3xl font-bold mb-3 text-white">Mitua Girls Secondary</h4>
+                        <p class="text-gray-400">A full-scale educational portal featuring automated resource management and student portals.</p>
+                    </div>
+                </div>
+
+                <div class="project-card group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
+                    <div class="h-80 overflow-hidden bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200" alt="AI Integration" class="w-full h-full object-cover transition duration-700 opacity-40 group-hover:opacity-100 group-hover:scale-110">
+                    </div>
+                    <div class="p-10 border-t border-white/5">
                         <div class="flex justify-between items-center mb-4">
                             <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest">AI Integration</span>
-                            <div class="text-white/20 text-xl"><i class="fas fa-brain"></i></div>
+                            <i class="fas fa-brain text-white/20 text-xl"></i>
                         </div>
-                        <h4 class="text-2xl font-bold mb-2">Predictive ERP</h4>
-                        <p class="text-gray-400 text-sm">Custom LLM integration for automated supply chain forecasting.</p>
+                        <h4 class="text-3xl font-bold mb-3 text-white">Predictive ERP</h4>
+                        <p class="text-gray-400">Custom LLM implementation for automated business intelligence and supply forecasting.</p>
                     </div>
                 </div>
 
                 <div class="project-card group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
-                    <div class="h-80 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070" alt="Software Development" class="project-image w-full h-full object-cover transition duration-700 opacity-60 group-hover:opacity-100">
+                    <div class="h-80 overflow-hidden bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200" alt="Software Development" class="w-full h-full object-cover transition duration-700 opacity-40 group-hover:opacity-100 group-hover:scale-110">
                     </div>
-                    <div class="p-8">
+                    <div class="p-10 border-t border-white/5">
                         <div class="flex justify-between items-center mb-4">
                             <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest">Software</span>
-                            <div class="text-white/20 text-xl"><i class="fas fa-code"></i></div>
+                            <i class="fas fa-code text-white/20 text-xl"></i>
                         </div>
-                        <h4 class="text-2xl font-bold mb-2">FinTech Core</h4>
-                        <p class="text-gray-400 text-sm">High-frequency trading dashboard with sub-millisecond data processing.</p>
+                        <h4 class="text-3xl font-bold mb-3 text-white">FinTech Core</h4>
+                        <p class="text-gray-400">Trading dashboard built for sub-millisecond data processing and secure transactions.</p>
                     </div>
                 </div>
+
             </div>
             
             <div class="mt-24 pt-12 border-t border-white/5">
-                <p class="text-center text-gray-500 font-bold uppercase tracking-[0.4em] text-xs mb-10">Our Technology Stack</p>
-                <div class="flex flex-wrap justify-center gap-12 opacity-30 grayscale hover:grayscale-0 transition duration-500">
-                    <i class="fab fa-react text-5xl hover:text-[#61DBFB]"></i>
-                    <i class="fab fa-node-js text-5xl hover:text-[#68A063]"></i>
-                    <i class="fab fa-python text-5xl hover:text-[#3776AB]"></i>
-                    <i class="fab fa-aws text-5xl hover:text-[#FF9900]"></i>
-                    <i class="fab fa-docker text-5xl hover:text-[#2496ED]"></i>
+                <p class="text-center text-gray-500 font-bold uppercase tracking-[0.4em] text-[10px] mb-10">Our Technology Stack</p>
+                <div class="flex flex-wrap justify-center gap-12 md:gap-20 opacity-30 grayscale hover:grayscale-0 transition duration-500 text-5xl">
+                    <i class="fab fa-react hover:text-[#61DBFB]"></i>
+                    <i class="fab fa-node-js hover:text-[#68A063]"></i>
+                    <i class="fab fa-python hover:text-[#3776AB]"></i>
+                    <i class="fab fa-aws hover:text-[#FF9900]"></i>
+                    <i class="fab fa-docker hover:text-[#2496ED]"></i>
                 </div>
             </div>
         </div>
@@ -232,6 +253,7 @@
     </a>
 
     <script>
+        // Mobile menu logic
         const mobileBtn = document.getElementById('mobile-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMenu = document.getElementById('close-menu');
@@ -241,6 +263,7 @@
         closeMenu.onclick = () => mobileMenu.classList.add('hidden');
         navLinks.forEach(link => link.onclick = () => mobileMenu.classList.add('hidden'));
 
+        // Background Slider
         let current = 0;
         const slides = document.querySelectorAll('.slide');
         setInterval(() => {
