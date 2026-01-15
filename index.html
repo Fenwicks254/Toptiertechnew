@@ -1,183 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toptiertech - Digital Solutions That Drive Your Success</title>
-    <link rel="stylesheet" href="styles.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>TopTierTech | Elite Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #0f172a;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+        .slide.active { opacity: 1; }
+
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.95) 30%, rgba(15, 23, 42, 0.3) 100%);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.1) rotate(1deg);
+        }
+    </style>
 </head>
-<body>
+<body class="text-white antialiased">
 
-    <header>
-        <a href="#" class="logo">Toptiertech</a>
-        <nav class="main-nav">
-            <a href="#">HOME</a> 
-<a href="#services">SERVICES</a>
-            <a href="#about">ABOUT</a> 
-<a href="#contact">CONTACT</a>
-            <a href="#contact" class="cta-button">Get A Quote</a>
-        </nav>
-    </header>
-
-<section class="hero-slideshow">
-    <div class="slides-container">
+    <nav class="fixed w-full z-[100] px-6 py-4 flex justify-between items-center bg-white shadow-lg border-b border-gray-200">
+        <div class="text-2xl font-black tracking-tighter text-slate-900">
+            <a href="index.html">TopTier<span class="text-[#00cba9]">Tech</span></a>
+        </div>
         
-        <div class="mySlides fade" style="display: block;"> 
-            <img src="slide-image-1.jpg" alt="Digital Solutions" class="slide-image">
-            <div class="hero-content">
-                <h1>Digital Solutions That Drives Your Success</h1>
-                <p>If you are looking for an agency to help you create a remarkable online presence, you've come to the right place. We can help you take your business to the next level.</p>
-            </div>
+        <div class="hidden lg:flex items-center space-x-10 text-xs font-bold uppercase tracking-widest text-slate-600">
+            <a href="services.html" class="hover:text-[#00cba9] transition">Services</a>
+            <a href="about.html" class="hover:text-[#00cba9] transition">About Us</a>
+            <a href="#founders" class="hover:text-[#00cba9] transition">Founders</a>
+            <a href="contact.html" class="bg-slate-900 text-white px-7 py-3 rounded-full hover:bg-[#00cba9] transition shadow-md">Contact Us</a>
         </div>
 
-        <div class="mySlides fade">
-            <img src="slide-image-2.jpg" alt="UI/UX Design" class="slide-image">
-            <div class="hero-content">
-                <h1>Crafting Intuitive User Experiences</h1>
-                <p>From wireframe to final product, our UI/UX design and branding services create interfaces that are beautiful, functional, and highly optimized for conversion.</p>
-            </div>
-        </div>
+        <button id="mobile-btn" class="lg:hidden text-slate-900 text-2xl">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
 
-        <div class="mySlides fade">
-            <img src="slide-image-3.jpg" alt="AI Automation" class="slide-image">
-            <div class="hero-content">
-                <h1>Automate. Innovate. Accelerate.</h1>
-                <p>Harness the power of A.I. and intelligent automation to streamline your operations, reduce overheads, and gain a decisive edge over the competition.</p>
-            </div>
-        </div>
-
+    <div id="mobile-menu" class="hidden fixed inset-0 z-[150] bg-white flex flex-col items-center justify-center space-y-8 text-2xl font-bold text-slate-900">
+        <button id="close-menu" class="absolute top-6 right-6 text-4xl">&times;</button>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="#founders" class="nav-link">Founders</a>
+        <a href="contact.html" class="text-[#00cba9]">Start a Project</a>
     </div>
 
-    <div style="text-align:center" class="slideshow-dots">
-        <span class="dot" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span> 
-    </div>
-</section>
-    <section class="services" id="services">
-        <h2>Hire Us For:</h2>
-        <div class="services-grid">
-            
-            <div class="service-card">
-                <h3>UI/UX Design & Branding</h3>
-                <p>Building intuitive, beautiful interfaces that ensure a seamless user journey. We focus on design that converts customers.</p>
-            </div>
-            
-            <div class="service-card">
-                <h3>Web & Software Development</h3>
-                <p>Looking for customized solutions? Our team will develop and deliver a secure, robust website or application that serves your exact purpose.</p>
-            </div>
-            
-            <div class="service-card">
-                <h3>A.I. & Automation Consulting</h3>
-                <p>Implementing intelligent workflows, machine learning models, and automated content services to cut costs and significantly improve efficiency.</p>
+    <section class="relative min-h-screen flex items-center pt-20">
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072');"></div>
+            <div class="absolute inset-0 hero-overlay z-10"></div>
+        </div>
+
+        <div class="relative z-20 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center w-full">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] mb-8 break-words">
+                    Elite Tech for <br><span class="text-[#00cba9]">Elite Growth.</span>
+                </h1>
+                <p class="text-lg md:text-2xl text-gray-300 mb-12 max-w-xl leading-relaxed">
+                    Custom digital infrastructure designed for the next generation of industry leaders.
+                </p>
+                <div class="flex flex-wrap gap-5">
+                    <a href="contact.html" class="bg-[#00cba9] text-white px-10 py-5 rounded-xl font-extrabold text-lg shadow-xl hover:scale-105 transition">Start Building</a>
+                    <a href="services.html" class="bg-white/10 border border-white/20 backdrop-blur-md px-10 py-5 rounded-xl font-bold text-lg hover:bg-white/20 transition">Learn More</a>
+                </div>
             </div>
 
-            <div class="service-card">
-                <h3>Digital Strategy & Marketing</h3>
-                <p>With researched digital marketing, we ensure new customers and clients are able to find your business and convert into loyal patrons.</p>
+            <div class="hidden lg:block">
+                <div class="glass-panel p-12 rounded-[3rem] border-l-8 border-[#00cba9]">
+                    <p class="text-[#00cba9] font-bold text-sm uppercase tracking-widest mb-4">Internal System</p>
+                    <h2 class="text-4xl font-bold mb-4 italic">Fluid-Architecture</h2>
+                    <p class="text-gray-400 text-lg mb-8 italic">"Building systems that don't just work, but scale infinitely."</p>
+                    <div class="h-1 w-24 bg-[#00cba9] rounded-full"></div>
+                </div>
+            </div>
+        </div>
+   <section id="portfolio" class="py-32 bg-[#0f172a] px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-[#00cba9] font-bold uppercase tracking-[0.3em] text-xs mb-4">Case Studies</h2>
+                    <h3 class="text-4xl md:text-6xl font-extrabold text-white">Proven <span class="text-[#00cba9]">Architecture.</span></h3>
+                </div>
+                <p class="text-gray-400 max-w-sm italic">Explore a selection of high-performance systems architected by our elite engineering team.</p>
             </div>
 
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
+                
+                <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
+                    <div class="h-96 overflow-hidden bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000" alt="Networking" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-100">
+                    </div>
+                    <div class="p-10 border-t border-white/5">
+                        <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest block mb-2">Networking</span>
+                        <h4 class="text-3xl font-bold mb-3 text-white">Global Mesh VPN</h4>
+                        <p class="text-gray-400">Secure, zero-latency mesh network infrastructure for enterprise logistics.</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
+                    <div class="h-96 overflow-hidden bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000" alt="AI Integration" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-100">
+                    </div>
+                    <div class="p-10 border-t border-white/5">
+                        <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest block mb-2">AI Integration</span>
+                        <h4 class="text-3xl font-bold mb-3 text-white">Predictive ERP</h4>
+                        <p class="text-gray-400">Custom LLM integration for automated supply chain forecasting and management.</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
+                    <div class="h-96 overflow-hidden bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070" alt="Software Development" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-100">
+                    </div>
+                    <div class="p-10 border-t border-white/5">
+                        <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest block mb-2">Software</span>
+                        <h4 class="text-3xl font-bold mb-3 text-white">FinTech Core</h4>
+                        <p class="text-gray-400">High-frequency trading dashboard with sub-millisecond data processing capabilities.</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
+                    <div class="h-96 overflow-hidden bg-slate-800">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026" alt="Web Design" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-100">
+                    </div>
+                    <div class="p-10 border-t border-white/5">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest block mb-2">Website Design</span>
+                                <h4 class="text-3xl font-bold mb-3 text-white">Mitua Girls Secondary</h4>
+                            </div>
+                            <a href="https://mituagirls.co.ke" target="_blank" class="text-white/50 hover:text-[#00cba9] transition text-xl">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <p class="text-gray-400">A modern, responsive educational portal designed to streamline school communication and student resources.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-24 pt-12 border-t border-white/5">
+                <p class="text-center text-gray-500 font-bold uppercase tracking-[0.4em] text-[10px] mb-10">Our Technology Stack</p>
+                <div class="flex flex-wrap justify-center gap-10 md:gap-16 opacity-30 grayscale hover:grayscale-0 transition duration-500 text-4xl md:text-5xl">
+                    <i class="fab fa-react hover:text-[#61DBFB]"></i>
+                    <i class="fab fa-node-js hover:text-[#68A063]"></i>
+                    <i class="fab fa-python hover:text-[#3776AB]"></i>
+                    <i class="fab fa-aws hover:text-[#FF9900]"></i>
+                    <i class="fab fa-docker hover:text-[#2496ED]"></i>
+                </div>
+            </div>
         </div>
     </section>
-    
-    <section class="about" id="about">
-        <h2>Who We Are</h2>
-        <p class="section-description">We are a team of tech experts with a passion for building, mobile apps, software development, and digital marketing to help businesses grow online.</p>
-        <p>Our mission is to empower our clients to use the internet to its full potential by providing affordable, effective, custom design websites and marketing solutions. Our vision is to become a global leader in providing the best and unique web design and marketing services to improve our client's productivity and business strength.</p>
+
+    <section id="founders" class="py-32 bg-slate-900/50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-extrabold text-center mb-24 italic">Leadership <span class="text-[#00cba9]">Team.</span></h2>
+            <div class="grid md:grid-cols-2 gap-20 max-w-5xl mx-auto">
+                <div class="text-center group">
+                    <div class="relative w-64 h-64 mx-auto mb-8">
+                        <div class="absolute inset-0 bg-[#00cba9] rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition"></div>
+                        <img src="https://via.placeholder.com/500" class="relative w-full h-full rounded-full border-[12px] border-slate-800 object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <h3 class="text-3xl font-bold italic">Your Name</h3>
+                    <p class="text-[#00cba9] font-bold tracking-[0.2em] text-sm uppercase mt-2">Co-Founder & CEO</p>
+                </div>
+                <div class="text-center group">
+                    <div class="relative w-64 h-64 mx-auto mb-8">
+                        <div class="absolute inset-0 bg-[#00cba9] rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition"></div>
+                        <img src="https://via.placeholder.com/500" class="relative w-full h-full rounded-full border-[12px] border-slate-800 object-cover grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <h3 class="text-3xl font-bold italic">Partner Name</h3>
+                    <p class="text-[#00cba9] font-bold tracking-[0.2em] text-sm uppercase mt-2">Co-Founder & CTO</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-<section class="portfolio" id="portfolio">
-    <h2>Our Proven Capabilities</h2>
-    <p class="section-description">We prioritize design AND function to build assets that inspire action.</p>
-    <div class="portfolio-grid">
-        
-        <div class="project-card">
-            <p class="tag">Client Solution / Educational Site</p>
-            <h4><a href="http://mituagirls.co.ke" target="_blank">MituaGirls.co.ke</a></h4>
-            <p class="project-description">A secure and user-friendly web presence built for an educational institution, demonstrating expertise in custom design and modern information architecture.</p> 
-        </div>
-        
-        <div class="project-card">
-            <p class="tag">Proprietary Platform / Core Tech</p>
-            <h4><a href="#" target="_blank">Toptier Agritech</a></h4>
-            <p class="project-description">Our data-driven proof-of-concept for agricultural management tools, confirming our ability to tackle complex, niche technology.</p> 
-        </div>
-        
-        <div class="project-card">
-            <p class="tag">Proprietary Platform / Content</p>
-            <h4><a href="#" target="_blank">Toptier Writers</a></h4>
-            <p class="project-description">A custom content creation platform demonstrating robust user management, specialized order workflows, and secure digital delivery systems.</p> 
-        </div>
-
-        <div class="project-card">
-            <p class="tag">Proprietary Platform / E-commerce</p>
-            <h4><a href="#" target="_blank">Toptier Shop Manager</a></h4>
-            <p class="project-description">Our solution for simplified local e-commerce management, showcasing expertise in inventory tracking, payment gateway integration, and scalable deployment.</p> 
-        </div>
-
-    </div>
-<section class="final-cta" id="contact">
-    <h2>Let's Talk About Your Project</h2>
-    <div class="contact-content-wrapper">
-        
-        <div class="contact-info">
-            <p class="contact-intro">We're ready to collaborate. Reach out to us directly or connect through our social channels.</p>
-            
-            <div class="contact-details">
-                <h3>Contact Details</h3>
-                <p><strong>Phone:</strong> +254 7XX XXX XXX</p>
-                <p><strong>Email:</strong> hello@yourcompany.com</p>
-                <p><strong>Location:</strong> Nakuru, Kenya</p>
+    <footer class="bg-white text-slate-900 pt-20 pb-10 px-8 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="md:col-span-1">
+                <div class="text-3xl font-black tracking-tighter mb-6">TopTier<span class="text-[#00cba9]">Tech</span></div>
+                <p class="text-slate-500 leading-relaxed">Defining the future of technology with precision engineering and creative digital strategies.</p>
             </div>
-            
-            <div class="social-links">
-                <h3>Connect with us</h3>
-                <a href="https://twitter.com/yourhandle" target="_blank" class="social-icon twitter">Twitter</a>
-                <a href="https://linkedin.com/company/yourcompany" target="_blank" class="social-icon linkedin">LinkedIn</a>
-                <a href="https://facebook.com/yourcompany" target="_blank" class="social-icon facebook">Facebook</a>
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-sm mb-6">Navigation</h4>
+                <ul class="space-y-4 text-slate-500">
+                    <li><a href="services.html" class="hover:text-[#00cba9]">Our Solutions</a></li>
+                    <li><a href="about.html" class="hover:text-[#00cba9]">Company Story</a></li>
+                    <li><a href="#founders" class="hover:text-[#00cba9]">Leadership Team</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-sm mb-6">Contact</h4>
+                <ul class="space-y-4 text-slate-500">
+                    <li><i class="fas fa-envelope mr-2 text-[#00cba9]"></i> contact@toptiertech.com</li>
+                    <li><i class="fas fa-phone mr-2 text-[#00cba9]"></i> +123 456 7890</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-widest text-sm mb-6">Connect</h4>
+                <div class="flex space-x-4 text-2xl">
+                    <a href="#" class="text-slate-400 hover:text-[#00cba9]"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-[#00cba9]"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-[#00cba9]"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
-
-        <div class="contact-form-container">
-            <h3>Send a message</h3>
-            <form action="#" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required class="contact-input"> 
-                <input type="email" name="email" placeholder="Business Email" required class="contact-input"> 
-                <textarea name="project" placeholder="Tell us about your project..." rows="4" class="contact-input"></textarea>
-                <button type="submit" class="cta-button submit-button">Connect with us!</button>
-            </form>
-        </div>
-
-    </div>
-</section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <p class="logo-footer">Toptiertech</p>
-                <p>Your Trusted Partners in Digital Growth.</p>
-            </div>
-            <div class="footer-links">
-                <a href="#services">Services</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 Toptiertech. All rights reserved.</p>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-gray-100 text-center text-slate-400 text-sm italic">
+            &copy; 2026 TopTierTech. Global Premium Partners.
         </div>
     </footer>
 
-    
-<a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/YOURNUMBER" class="fixed bottom-8 right-8 z-[200]">
+        <div class="bg-[#25D366] w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+            <i class="fab fa-whatsapp text-3xl text-white"></i>
+        </div>
     </a>
 
-    <script src="slideshow.js"></script>
+    <script>
+        const mobileBtn = document.getElementById('mobile-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
 
+        mobileBtn.onclick = () => mobileMenu.classList.remove('hidden');
+        closeMenu.onclick = () => mobileMenu.classList.add('hidden');
+        navLinks.forEach(link => link.onclick = () => mobileMenu.classList.add('hidden'));
+
+        let current = 0;
+        const slides = document.querySelectorAll('.slide');
+        setInterval(() => {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }, 5000);
+    </script>
 </body>
 </html>
