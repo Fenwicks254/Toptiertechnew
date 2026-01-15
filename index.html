@@ -97,79 +97,70 @@
                 </div>
             </div>
         </div>
-   <section id="portfolio" class="py-32 bg-[#0f172a] px-6">
+    </section>
+
+    <section id="portfolio" class="py-32 bg-[#0f172a] px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                 <div class="max-w-2xl">
-                    <h2 class="text-[#00cba9] font-bold uppercase tracking-[0.3em] text-xs mb-4">Case Studies</h2>
-                    <h3 class="text-4xl md:text-6xl font-extrabold text-white">Proven <span class="text-[#00cba9]">Architecture.</span></h3>
+                    <h2 class="text-[#00cba9] font-bold uppercase tracking-[0.3em] text-sm mb-4">Case Studies</h2>
+                    <h3 class="text-4xl md:text-6xl font-extrabold text-white italic">Proven <span class="text-[#00cba9]">Architecture.</span></h3>
                 </div>
                 <p class="text-gray-400 max-w-sm italic">Explore a selection of high-performance systems architected by our elite engineering team.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
-                
-                <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
-                    <div class="h-96 overflow-hidden bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000" alt="Networking" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-100">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000" alt="Networking" class="project-image w-full h-full object-cover transition duration-700 opacity-60 group-hover:opacity-100">
                     </div>
-                    <div class="p-10 border-t border-white/5">
-                        <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest block mb-2">Networking</span>
-                        <h4 class="text-3xl font-bold mb-3 text-white">Global Mesh VPN</h4>
-                        <p class="text-gray-400">Secure, zero-latency mesh network infrastructure for enterprise logistics.</p>
-                    </div>
-                </div>
-
-                <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
-                    <div class="h-96 overflow-hidden bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000" alt="AI Integration" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-100">
-                    </div>
-                    <div class="p-10 border-t border-white/5">
-                        <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest block mb-2">AI Integration</span>
-                        <h4 class="text-3xl font-bold mb-3 text-white">Predictive ERP</h4>
-                        <p class="text-gray-400">Custom LLM integration for automated supply chain forecasting and management.</p>
-                    </div>
-                </div>
-
-                <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
-                    <div class="h-96 overflow-hidden bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070" alt="Software Development" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-100">
-                    </div>
-                    <div class="p-10 border-t border-white/5">
-                        <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest block mb-2">Software</span>
-                        <h4 class="text-3xl font-bold mb-3 text-white">FinTech Core</h4>
-                        <p class="text-gray-400">High-frequency trading dashboard with sub-millisecond data processing capabilities.</p>
-                    </div>
-                </div>
-
-                <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
-                    <div class="h-96 overflow-hidden bg-slate-800">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026" alt="Web Design" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-100">
-                    </div>
-                    <div class="p-10 border-t border-white/5">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest block mb-2">Website Design</span>
-                                <h4 class="text-3xl font-bold mb-3 text-white">Mitua Girls Secondary</h4>
-                            </div>
-                            <a href="https://mituagirls.co.ke" target="_blank" class="text-white/50 hover:text-[#00cba9] transition text-xl">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest">Networking</span>
+                            <div class="text-white/20 text-xl"><i class="fas fa-server"></i></div>
                         </div>
-                        <p class="text-gray-400">A modern, responsive educational portal designed to streamline school communication and student resources.</p>
+                        <h4 class="text-2xl font-bold mb-2">Global Mesh VPN</h4>
+                        <p class="text-gray-400 text-sm">Secure, zero-latency mesh network infrastructure for enterprise logistics.</p>
                     </div>
                 </div>
 
+                <div class="project-card group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2000" alt="AI Neural Path" class="project-image w-full h-full object-cover transition duration-700 opacity-60 group-hover:opacity-100">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest">AI Integration</span>
+                            <div class="text-white/20 text-xl"><i class="fas fa-brain"></i></div>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">Predictive ERP</h4>
+                        <p class="text-gray-400 text-sm">Custom LLM integration for automated supply chain forecasting.</p>
+                    </div>
+                </div>
+
+                <div class="project-card group relative overflow-hidden rounded-[2.5rem] bg-slate-900 border border-white/5 shadow-2xl">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070" alt="Software Development" class="project-image w-full h-full object-cover transition duration-700 opacity-60 group-hover:opacity-100">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[#00cba9] text-xs font-bold uppercase tracking-widest">Software</span>
+                            <div class="text-white/20 text-xl"><i class="fas fa-code"></i></div>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2">FinTech Core</h4>
+                        <p class="text-gray-400 text-sm">High-frequency trading dashboard with sub-millisecond data processing.</p>
+                    </div>
+                </div>
             </div>
             
             <div class="mt-24 pt-12 border-t border-white/5">
-                <p class="text-center text-gray-500 font-bold uppercase tracking-[0.4em] text-[10px] mb-10">Our Technology Stack</p>
-                <div class="flex flex-wrap justify-center gap-10 md:gap-16 opacity-30 grayscale hover:grayscale-0 transition duration-500 text-4xl md:text-5xl">
-                    <i class="fab fa-react hover:text-[#61DBFB]"></i>
-                    <i class="fab fa-node-js hover:text-[#68A063]"></i>
-                    <i class="fab fa-python hover:text-[#3776AB]"></i>
-                    <i class="fab fa-aws hover:text-[#FF9900]"></i>
-                    <i class="fab fa-docker hover:text-[#2496ED]"></i>
+                <p class="text-center text-gray-500 font-bold uppercase tracking-[0.4em] text-xs mb-10">Our Technology Stack</p>
+                <div class="flex flex-wrap justify-center gap-12 opacity-30 grayscale hover:grayscale-0 transition duration-500">
+                    <i class="fab fa-react text-5xl hover:text-[#61DBFB]"></i>
+                    <i class="fab fa-node-js text-5xl hover:text-[#68A063]"></i>
+                    <i class="fab fa-python text-5xl hover:text-[#3776AB]"></i>
+                    <i class="fab fa-aws text-5xl hover:text-[#FF9900]"></i>
+                    <i class="fab fa-docker text-5xl hover:text-[#2496ED]"></i>
                 </div>
             </div>
         </div>
