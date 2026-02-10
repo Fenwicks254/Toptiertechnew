@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | TopTierTech</title>
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="TopTierTech" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -12,24 +20,35 @@
     </style>
 </head>
 <body>
-<nav class="fixed w-full z-[100] px-6 py-4 flex justify-between items-center bg-white shadow-sm border-b border-gray-100">
-    <div class="flex items-center">
-        <a href="index.html" class="flex items-center gap-3 group">
-            <img src="logo.png" alt="TopTierTech Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-105">
-            
-            <div class="text-2xl font-black tracking-tighter text-slate-900">
-                TopTier<span class="text-[#00cba9]">Tech</span>
-            </div>
-        </a>
-    </div>
+    <nav class="fixed w-full z-[100] px-6 py-4 flex justify-between items-center bg-white shadow-sm border-b border-gray-100">
+        <div class="flex items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="logo.png" alt="TopTierTech Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-105">
+                <div class="text-2xl font-black tracking-tighter text-slate-900">
+                    TopTier<span class="text-[#00cba9]">Tech</span>
+                </div>
+            </a>
+        </div>
 
-    <div class="hidden lg:flex items-center space-x-10 text-xs font-bold uppercase tracking-widest text-slate-600">
-        <a href="index.html" class="hover:text-[#00cba9] transition">Home</a>
-        <a href="services.html" class="hover:text-[#00cba9] transition">Services</a>
-        <a href="about.html" class="text-[#00cba9]">About</a>
-        <a href="contact.html" class="bg-slate-900 text-white px-7 py-3 rounded-full hover:bg-[#00cba9] transition shadow-md">Contact</a>
-    </div>
-</nav>
+        <div class="hidden lg:flex items-center space-x-10 text-xs font-bold uppercase tracking-widest text-slate-600">
+            <a href="index.html" class="hover:text-[#00cba9] transition">Home</a>
+            <a href="services.html" class="hover:text-[#00cba9] transition">Services</a>
+            <a href="about.html" class="text-[#00cba9]">About</a>
+            <a href="contact.html" class="bg-slate-900 text-white px-7 py-3 rounded-full hover:bg-[#00cba9] transition shadow-md">Contact</a>
+        </div>
+
+        <button id="mobile-btn" class="lg:hidden text-slate-900 text-2xl">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-slate-900 z-[150] flex flex-col items-center justify-center space-y-8 text-white text-2xl font-bold hidden">
+            <button id="close-menu" class="absolute top-8 right-8 text-4xl">&times;</button>
+            <a href="index.html" class="hover:text-[#00cba9]">Home</a>
+            <a href="services.html" class="hover:text-[#00cba9]">Services</a>
+            <a href="about.html" class="text-[#00cba9]">About</a>
+            <a href="contact.html" class="hover:text-[#00cba9]">Contact</a>
+        </div>
+    </nav>
 
     <header class="pt-40 pb-20 px-6 bg-slate-900 text-white text-center">
         <h2 class="text-[#00cba9] font-bold uppercase tracking-widest text-sm mb-4">Our Mission</h2>
@@ -68,5 +87,14 @@
             </div>
         </div>
     </section>
+
+    <script>
+        const btn = document.getElementById('mobile-btn');
+        const menu = document.getElementById('mobile-menu');
+        const close = document.getElementById('close-menu');
+
+        btn.addEventListener('click', () => menu.classList.remove('hidden'));
+        close.addEventListener('click', () => menu.classList.add('hidden'));
+    </script>
 </body>
 </html>
