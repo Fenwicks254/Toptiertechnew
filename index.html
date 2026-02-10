@@ -56,22 +56,29 @@
 </head>
 <body class="text-white antialiased">
 
-    <nav class="fixed w-full z-[100] px-6 py-4 flex justify-between items-center bg-white shadow-lg border-b border-gray-200">
-        <div class="text-2xl font-black tracking-tighter text-slate-900">
-            <a href="index.html">TopTier<span class="text-[#00cba9]">Tech</span></a>
-        </div>
-        
-        <div class="hidden lg:flex items-center space-x-10 text-xs font-bold uppercase tracking-widest text-slate-600">
-            <a href="services.html" class="hover:text-[#00cba9] transition">Services</a>
-            <a href="about.html" class="hover:text-[#00cba9] transition">About Us</a>
-            <a href="#founders" class="hover:text-[#00cba9] transition">Founders</a>
-            <a href="contact.html" class="bg-slate-900 text-white px-7 py-3 rounded-full hover:bg-[#00cba9] transition shadow-md">Contact Us</a>
-        </div>
+<nav class="fixed w-full z-[100] px-6 py-4 flex justify-between items-center bg-white shadow-lg border-b border-gray-200">
+    
+    <div class="flex items-center">
+        <a href="index.html" class="flex items-center gap-3 group">
+            <img src="logo.png" alt="TopTierTech Logo" class="h-10 w-auto object-contain transition-transform group-hover:scale-105">
+            
+            <div class="text-2xl font-black tracking-tighter text-slate-900">
+                TopTier<span class="text-[#00cba9]">Tech</span>
+            </div>
+        </a>
+    </div>
+    
+    <div class="hidden lg:flex items-center space-x-10 text-xs font-bold uppercase tracking-widest text-slate-600">
+        <a href="services.html" class="hover:text-[#00cba9] transition">Services</a>
+        <a href="about.html" class="hover:text-[#00cba9] transition">About Us</a>
+        <a href="#founders" class="hover:text-[#00cba9] transition">Founders</a>
+        <a href="contact.html" class="bg-slate-900 text-white px-7 py-3 rounded-full hover:bg-[#00cba9] transition shadow-md">Contact Us</a>
+    </div>
 
-        <button id="mobile-btn" class="lg:hidden text-slate-900 text-2xl">
-            <i class="fas fa-bars"></i>
-        </button>
-    </nav>
+    <button id="mobile-btn" class="lg:hidden text-slate-900 text-2xl">
+        <i class="fas fa-bars"></i>
+    </button>
+</nav>
 
     <div id="mobile-menu" class="hidden fixed inset-0 z-[150] bg-white flex flex-col items-center justify-center space-y-8 text-2xl font-bold text-slate-900">
         <button id="close-menu" class="absolute top-6 right-6 text-4xl">&times;</button>
